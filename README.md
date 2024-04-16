@@ -74,4 +74,17 @@ $ bun add @tanstack/react-query-devtools
 <br />
 <br />
 
-## Get 요청
+```jsx
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    {/* QueryClientProvider 하위 요소는 Context에 캐시된 데이터를 사용할 수 있음 */}
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
+  </React.StrictMode>
+);
+```
